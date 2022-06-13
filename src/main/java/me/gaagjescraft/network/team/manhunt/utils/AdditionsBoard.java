@@ -63,13 +63,18 @@ public class AdditionsBoard {
         arg1 = ChatColor.translateAlternateColorCodes('&', arg1);
 
         if (cache.containsKey(arg0) && cache.get(arg0).equals(arg1)) return; // Line hasn't changed
-        cache.remove(arg0); // remove the old lineG
+        cache.remove(arg0); // remove the old line
         cache.put(arg0, arg1); // add the new line
 
         ArrayList<String> arg3 = convertIntoPieces(arg1, 64);
+
+        // Sanity check
+        if (arg2 == null) return;
+
         arg2.setPrefix(arg3.get(0));
 
-        if (arg3.size() >= 2) {
+        // If line is less than 64, there won't be a suffix
+        if (arg3.size() > 1) {
             arg2.setSuffix(arg3.get(1));
         }
     }
