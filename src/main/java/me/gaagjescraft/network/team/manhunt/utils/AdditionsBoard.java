@@ -63,13 +63,15 @@ public class AdditionsBoard {
         arg1 = ChatColor.translateAlternateColorCodes('&', arg1);
 
         if (cache.containsKey(arg0) && cache.get(arg0).equals(arg1)) return; // Line hasn't changed
-        cache.remove(arg0); // remove the old line
+        cache.remove(arg0); // remove the old lineG
         cache.put(arg0, arg1); // add the new line
 
         ArrayList<String> arg3 = convertIntoPieces(arg1, 64);
-
         arg2.setPrefix(arg3.get(0));
-        arg2.setSuffix(arg3.get(1));
+
+        if (arg3.size() >= 2) {
+            arg2.setSuffix(arg3.get(1));
+        }
     }
 
     private ArrayList<String> convertIntoPieces(String arg0, int arg1) {

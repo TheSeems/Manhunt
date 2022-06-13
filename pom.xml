@@ -247,6 +247,7 @@
             <groupId>com.nametagedit</groupId>
             <artifactId>nametagedit</artifactId>
             <version>4.5.6</version>
+            <scope>provided</scope>
         </dependency>
         <dependency>
             <groupId>com.viaversion</groupId>
@@ -276,6 +277,12 @@
             <artifactId>paperlib</artifactId>
             <version>1.0.8-SNAPSHOT</version>
             <scope>compile</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.junit.jupiter</groupId>
+            <artifactId>junit-jupiter</artifactId>
+            <version>RELEASE</version>
+            <scope>test</scope>
         </dependency>
     </dependencies>
 </project>
